@@ -11,6 +11,8 @@ import com.hexagonkt.http.server.model.HttpServerRequest
 import com.hexagonkt.serialization.jackson.json.Json
 import com.hexagonkt.serialization.parseMap
 import com.hexagonkt.serialization.serialize
+import org.example.domain.model.Appointment
+import org.example.rest.AppointmentMessage
 import org.junit.jupiter.api.AfterAll
 import org.junit.jupiter.api.BeforeAll
 import org.junit.jupiter.api.Test
