@@ -6,8 +6,8 @@ import com.hexagonkt.core.require
 import com.hexagonkt.http.model.ContentType
 import com.hexagonkt.http.server.HttpServer
 import com.hexagonkt.http.server.HttpServerSettings
-import com.hexagonkt.http.server.handlers.HttpHandler
-import com.hexagonkt.http.server.handlers.path
+import com.hexagonkt.http.handlers.HttpHandler
+import com.hexagonkt.http.handlers.path
 import com.hexagonkt.http.server.jetty.JettyServletAdapter
 import com.hexagonkt.serialization.jackson.json.Json
 import com.hexagonkt.serialization.serialize
