@@ -8,7 +8,7 @@ import com.hexagonkt.http.server.HttpServer
 import com.hexagonkt.http.server.HttpServerSettings
 import com.hexagonkt.http.handlers.HttpHandler
 import com.hexagonkt.http.handlers.path
-import com.hexagonkt.http.server.jetty.JettyServletAdapter
+import com.hexagonkt.http.server.netty.NettyServerAdapter
 import com.hexagonkt.serialization.jackson.json.Json
 import com.hexagonkt.serialization.serialize
 import org.example.domain.AppointmentsService
@@ -60,6 +60,6 @@ class RestApi(
     }
 
     private val settings = HttpServerSettings(ALL_INTERFACES, bindPort)
-    private val serverAdapter = JettyServletAdapter(minThreads = 4)
+    private val serverAdapter = NettyServerAdapter()
     val server: HttpServer = HttpServer(serverAdapter, applicationHandler, settings)
 }
