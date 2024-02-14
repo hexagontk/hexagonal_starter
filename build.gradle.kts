@@ -1,12 +1,13 @@
 import org.graalvm.buildtools.gradle.dsl.GraalVMExtension
+import org.gradle.api.tasks.wrapper.Wrapper.DistributionType.ALL
 import java.lang.System.getProperty
 
 plugins {
     kotlin("jvm") version("1.9.22")
-    id("org.graalvm.buildtools.native") version("0.9.28")
+    id("org.graalvm.buildtools.native") version("0.10.0")
 }
 
-val hexagonVersion = "3.4.6"
+val hexagonVersion = "3.4.7"
 val gradleScripts = "https://raw.githubusercontent.com/hexagonkt/hexagon/$hexagonVersion/gradle"
 
 ext.set("options", "-Xmx48m")
@@ -44,4 +45,9 @@ extensions.configure<GraalVMExtension> {
             .forEach(buildArgs::add)
         }
     }
+}
+
+tasks.wrapper {
+    gradleVersion = "8.6"
+    distributionType = ALL
 }
