@@ -4,10 +4,10 @@ import java.lang.System.getProperty
 
 plugins {
     kotlin("jvm") version("1.9.22")
-    id("org.graalvm.buildtools.native") version("0.10.0")
+    id("org.graalvm.buildtools.native") version("0.10.1")
 }
 
-val hexagonVersion = "3.4.7"
+val hexagonVersion = "3.5.0"
 val gradleScripts = "https://raw.githubusercontent.com/hexagonkt/hexagon/$hexagonVersion/gradle"
 
 ext.set("options", "-Xmx48m")
