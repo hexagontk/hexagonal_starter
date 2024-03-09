@@ -3,7 +3,7 @@ import org.gradle.api.tasks.wrapper.Wrapper.DistributionType.ALL
 import java.lang.System.getProperty
 
 plugins {
-    kotlin("jvm") version("1.9.22")
+    kotlin("jvm") version("1.9.23")
     id("org.graalvm.buildtools.native") version("0.10.1")
 }
 
