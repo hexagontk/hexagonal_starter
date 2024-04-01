@@ -55,7 +55,7 @@ I would say it is ok to structure the adapter packages the way it makes more sen
 there is not a lot of value on creating input ports (just the adapters would be fine).
 
 ### Architecture Diagram
-![Architecture Diagram](https://hexagonkt.com/img/architecture.svg)
+![Architecture Diagram](https://hexagontk.com/img/architecture.svg)
 
 ## Software Requirements
 To build the application you will need:
