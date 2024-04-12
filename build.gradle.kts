@@ -7,7 +7,7 @@ plugins {
     id("org.graalvm.buildtools.native") version("0.10.1")
 }
 
-val hexagonVersion = "3.5.0"
+val hexagonVersion = "3.5.3"
 val gradleScripts = "https://raw.githubusercontent.com/hexagonkt/hexagon/$hexagonVersion/gradle"
 
 ext.set("options", "-Xmx48m")
@@ -48,6 +48,6 @@ extensions.configure<GraalVMExtension> {
 }
 
 tasks.wrapper {
-    gradleVersion = "8.6"
+    gradleVersion = "8.7"
     distributionType = ALL
 }
