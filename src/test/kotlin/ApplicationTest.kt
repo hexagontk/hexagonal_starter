@@ -2,6 +2,7 @@ package org.example
 
 import com.hexagonkt.core.logging.info
 import com.hexagonkt.core.media.APPLICATION_JSON
+import com.hexagonkt.core.urlOf
 import com.hexagonkt.http.client.HttpClient
 import com.hexagonkt.http.client.HttpClientSettings
 import com.hexagonkt.http.client.jetty.JettyClientAdapter
@@ -26,7 +27,7 @@ import kotlin.test.assertEquals
 @TestInstance(PER_CLASS)
 internal class ApplicationTest {
 
-    private val baseUrl: URL by lazy { URL("http://localhost:${restApi.server.runtimePort}") }
+    private val baseUrl: URL by lazy { urlOf("http://localhost:${restApi.server.runtimePort}") }
     private val settings: HttpClientSettings by lazy { HttpClientSettings(baseUrl) }
     private val client: HttpClient by lazy { HttpClient(JettyClientAdapter(), settings) }
 
