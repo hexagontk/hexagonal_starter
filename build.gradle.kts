@@ -3,8 +3,8 @@ import org.gradle.api.tasks.wrapper.Wrapper.DistributionType.ALL
 import java.lang.System.getProperty
 
 plugins {
-    kotlin("jvm") version("1.9.24")
-    id("org.graalvm.buildtools.native") version("0.10.1")
+    kotlin("jvm") version("2.0.0")
+    id("org.graalvm.buildtools.native") version("0.10.2")
 }
 
 val hexagonVersion = "3.5.3"

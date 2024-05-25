@@ -1,21 +1,15 @@
 
-name: Push
-
 on: push
 
 jobs:
   build:
-    name: Build
     runs-on: ubuntu-latest
     steps:
-      - name: Check Out
-        uses: actions/checkout@v4
-      - name: Install Java
-        uses: graalvm/setup-graalvm@v1
+      - uses: actions/checkout@v4
+      - uses: graalvm/setup-graalvm@v1
         with:
           version: latest
           distribution: graalvm-community
           java-version: 21
           cache: gradle
-      - name: Build Project
-        run: ./gradlew nativeTest
+      - run: ./gradlew nativeTest
