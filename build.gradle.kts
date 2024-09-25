@@ -7,9 +7,9 @@ plugins {
     id("org.graalvm.buildtools.native") version("0.10.3")
 }
 
-val hexagonVersion = "3.6.6"
-val flywayVersion = "10.18.0"
-val postgresqlVersion = "42.7.3"
+val hexagonVersion = "3.7.0"
+val flywayVersion = "10.18.1"
+val postgresqlVersion = "42.7.4"
 val kafkaVersion = "3.8.0"
 val gradleScripts = "https://raw.githubusercontent.com/hexagonkt/hexagon/$hexagonVersion/gradle"
 
@@ -54,6 +54,6 @@ extensions.configure<GraalVMExtension> {
 }
 
 tasks.wrapper {
-    gradleVersion = "8.10.1"
+    gradleVersion = "8.10.2"
     distributionType = ALL
 }
