@@ -1,6 +1,6 @@
 package org.example.adapters
 
-import com.hexagonkt.core.logging.Logger
+import com.hexagontk.core.logging.Logger
 import org.example.domain.AppointmentsNotifierPort
 
 class LoggingAppointmentsNotifier : AppointmentsNotifierPort {

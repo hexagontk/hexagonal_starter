@@ -1,8 +1,8 @@
 package org.example.rest
 
-import com.hexagonkt.core.fieldsMapOf
-import com.hexagonkt.serialization.jackson.json.Json
-import com.hexagonkt.serialization.parseMap
+import com.hexagontk.core.fieldsMapOf
+import com.hexagontk.serialization.jackson.json.Json
+import com.hexagontk.serialization.parseMap
 import org.example.domain.model.Appointment
 import java.time.LocalDateTime
 

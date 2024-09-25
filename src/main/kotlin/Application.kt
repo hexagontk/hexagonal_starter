@@ -1,6 +1,6 @@
 package org.example
 
-import com.hexagonkt.core.Jvm
+import com.hexagontk.core.Jvm
 import org.example.adapters.LoggingAppointmentsNotifier
 import org.example.adapters.MapAppointmentsStore
 import org.example.domain.AppointmentsService
