@@ -8,7 +8,7 @@ plugins {
 }
 
 val hexagonVersion = "4.0.0-A3"
-val flywayVersion = "10.19.0"
+val flywayVersion = "10.20.0"
 val postgresqlVersion = "42.7.4"
 val kafkaVersion = "3.8.0"
 val gradleScripts = "https://raw.githubusercontent.com/hexagontk/hexagon/$hexagonVersion/gradle"
