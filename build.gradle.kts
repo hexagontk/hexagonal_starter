@@ -28,7 +28,7 @@ group="org.example"
 description="Service's description"
 
 dependencies {
-    "implementation"("com.hexagontk:http_server_netty:$hexagonVersion")
+    "implementation"("com.hexagontk:http_server_helidon:$hexagonVersion")
     "implementation"("com.hexagontk:serialization_jackson_json:$hexagonVersion")
 //    "implementation"("org.flywaydb:flyway-core:$flywayVersion")
 //    "implementation"("org.postgresql:postgresql:$postgresqlVersion")
