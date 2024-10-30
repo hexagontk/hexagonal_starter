@@ -1,6 +1,6 @@
 package org.example
 
-import com.hexagontk.core.Jvm
+import com.hexagontk.core.Platform
 import org.example.adapters.LoggingAppointmentsNotifier
 import org.example.adapters.MapAppointmentsStore
 import org.example.domain.AppointmentsService
@@ -13,10 +13,10 @@ fun main() {
         AppointmentsService(
             MapAppointmentsStore(),
             LoggingAppointmentsNotifier(),
-            Jvm.systemSettingOrNull("CREATE_MESSAGE") ?: "Make room for an appointment at %s",
-            Jvm.systemSettingOrNull("DELETE_MESSAGE") ?: "You are free at %s, go have fun!",
+            Platform.systemSettingOrNull("CREATE_MESSAGE") ?: "Make room for an appointment at %s",
+            Platform.systemSettingOrNull("DELETE_MESSAGE") ?: "You are free at %s, go have fun!",
         ),
-        Jvm.systemSettingOrNull("BIND_PORT") ?: 9090
+        Platform.systemSettingOrNull("BIND_PORT") ?: 9090
     )
 
     restApi.server.start()

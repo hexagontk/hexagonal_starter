@@ -1,11 +1,11 @@
 package org.example
 
-import com.hexagontk.core.logging.info
+import com.hexagontk.core.info
 import com.hexagontk.core.media.APPLICATION_JSON
 import com.hexagontk.core.urlOf
 import com.hexagontk.http.client.HttpClient
 import com.hexagontk.http.client.HttpClientSettings
-import com.hexagontk.http.client.jetty.JettyClientAdapter
+import com.hexagontk.http.client.jetty.JettyHttpClient
 import com.hexagontk.http.model.HttpMethod.POST
 import com.hexagontk.http.model.NOT_FOUND_404
 import com.hexagontk.http.model.OK_200
@@ -29,7 +29,7 @@ internal class ApplicationTest {
 
     private val baseUrl: URL by lazy { urlOf("http://localhost:${restApi.server.runtimePort}") }
     private val settings: HttpClientSettings by lazy { HttpClientSettings(baseUrl) }
-    private val client: HttpClient by lazy { HttpClient(JettyClientAdapter(), settings) }
+    private val client: HttpClient by lazy { HttpClient(JettyHttpClient(), settings) }
 
     @BeforeAll fun beforeAll() {
         main()
