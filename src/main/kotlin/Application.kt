@@ -1,6 +1,7 @@
 package org.example
 
 import com.hexagontk.core.Platform
+import com.hexagontk.core.info
 import org.example.adapters.LoggingAppointmentsNotifier
 import org.example.adapters.MapAppointmentsStore
 import org.example.domain.AppointmentsService
@@ -20,4 +21,5 @@ fun main() {
     )
 
     restApi.server.start()
+    restApi.server.createBanner(Platform.uptime()).info()
 }

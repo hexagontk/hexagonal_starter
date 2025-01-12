@@ -3,11 +3,11 @@ import org.gradle.api.tasks.wrapper.Wrapper.DistributionType.ALL
 import java.lang.System.getProperty
 
 plugins {
-    kotlin("jvm") version("2.0.21")
-    id("org.graalvm.buildtools.native") version("0.10.3")
+    kotlin("jvm") version("2.1.0")
+    id("org.graalvm.buildtools.native") version("0.10.4")
 }
 
-val hexagonVersion = "4.0.0-A6"
+val hexagonVersion = "4.0.0-A7"
 val flywayVersion = "10.20.1"
 val postgresqlVersion = "42.7.4"
 val kafkaVersion = "3.8.1"
@@ -44,7 +44,8 @@ extensions.configure<GraalVMExtension> {
     binaries {
         named("main") {
             listOfNotNull(
-                "--static", // Won't work on Windows or macOS
+//                "--static", // Won't work on Windows or macOS
+//                "--libc=musl",
                 "-R:MaxHeapSize=16",
                 option("enableMonitoring") { "--enable-monitoring" },
             )
@@ -54,6 +55,6 @@ extensions.configure<GraalVMExtension> {
 }
 
 tasks.wrapper {
-    gradleVersion = "8.10.2"
+    gradleVersion = "8.12"
     distributionType = ALL
 }

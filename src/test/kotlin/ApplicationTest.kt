@@ -2,7 +2,6 @@ package org.example
 
 import com.hexagontk.core.info
 import com.hexagontk.core.media.APPLICATION_JSON
-import com.hexagontk.core.urlOf
 import com.hexagontk.http.client.HttpClient
 import com.hexagontk.http.client.HttpClientSettings
 import com.hexagontk.http.client.jetty.JettyHttpClient
@@ -20,14 +19,14 @@ import org.junit.jupiter.api.BeforeAll
 import org.junit.jupiter.api.Test
 import org.junit.jupiter.api.TestInstance
 import org.junit.jupiter.api.TestInstance.Lifecycle.PER_CLASS
-import java.net.URL
+import java.net.URI
 import java.time.LocalDateTime
 import kotlin.test.assertEquals
 
 @TestInstance(PER_CLASS)
 internal class ApplicationTest {
 
-    private val baseUrl: URL by lazy { urlOf("http://localhost:${restApi.server.runtimePort}") }
+    private val baseUrl: URI by lazy { URI("http://localhost:${restApi.server.runtimePort}") }
     private val settings: HttpClientSettings by lazy { HttpClientSettings(baseUrl) }
     private val client: HttpClient by lazy { HttpClient(JettyHttpClient(), settings) }
 
