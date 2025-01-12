@@ -8,9 +8,9 @@ plugins {
 }
 
 val hexagonVersion = "4.0.0-A7"
-val flywayVersion = "10.20.1"
+val flywayVersion = "11.1.1"
 val postgresqlVersion = "42.7.4"
-val kafkaVersion = "3.8.1"
+val kafkaVersion = "3.9.0"
 val gradleScripts = "https://raw.githubusercontent.com/hexagontk/hexagon/$hexagonVersion/gradle"
 
 ext.set("options", "-Xmx48m")
@@ -30,9 +30,9 @@ description="Service's description"
 dependencies {
     "implementation"("com.hexagontk:http_server_helidon:$hexagonVersion")
     "implementation"("com.hexagontk:serialization_jackson_json:$hexagonVersion")
-//    "implementation"("org.flywaydb:flyway-core:$flywayVersion")
-//    "implementation"("org.postgresql:postgresql:$postgresqlVersion")
-//    "implementation"("org.apache.kafka:kafka-clients:$kafkaVersion")
+    "implementation"("org.flywaydb:flyway-core:$flywayVersion")
+    "implementation"("org.postgresql:postgresql:$postgresqlVersion")
+    "implementation"("org.apache.kafka:kafka-clients:$kafkaVersion")
 
     "testImplementation"("com.hexagontk:http_client_jetty:$hexagonVersion")
 }
