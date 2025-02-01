@@ -11,8 +11,7 @@ val hexagonVersion = "4.0.0-B2"
 val flywayVersion = "11.3.0"
 val postgresqlVersion = "42.7.5"
 val kafkaVersion = "3.9.0"
-//val gradleScripts = "https://raw.githubusercontent.com/hexagontk/hexagon/$hexagonVersion/gradle"
-val gradleScripts = "../../jaguililla/hexagon/gradle"
+val gradleScripts = "https://raw.githubusercontent.com/hexagontk/hexagon/$hexagonVersion/gradle"
 
 ext.set("options", "-Xmx48m")
 ext.set("modules", "java.logging")
