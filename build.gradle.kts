@@ -3,13 +3,13 @@ import org.gradle.api.tasks.wrapper.Wrapper.DistributionType.ALL
 import java.lang.System.getProperty
 
 plugins {
-    kotlin("jvm") version("2.1.0")
+    kotlin("jvm") version("2.1.10")
     id("org.graalvm.buildtools.native") version("0.10.4")
 }
 
-val hexagonVersion = "4.0.0-A7"
-val flywayVersion = "11.2.0"
-val postgresqlVersion = "42.7.4"
+val hexagonVersion = "4.0.0-B2"
+val flywayVersion = "11.3.0"
+val postgresqlVersion = "42.7.5"
 val kafkaVersion = "3.9.0"
 //val gradleScripts = "https://raw.githubusercontent.com/hexagontk/hexagon/$hexagonVersion/gradle"
 val gradleScripts = "../../jaguililla/hexagon/gradle"
