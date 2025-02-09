@@ -4,7 +4,7 @@ import com.hexagontk.core.info
 import com.hexagontk.core.media.APPLICATION_JSON
 import com.hexagontk.http.client.HttpClient
 import com.hexagontk.http.client.HttpClientSettings
-import com.hexagontk.http.client.jetty.JettyHttpClient
+import com.hexagontk.http.client.jdk.JdkHttpClient
 import com.hexagontk.http.model.HttpMethod.POST
 import com.hexagontk.http.model.NOT_FOUND_404
 import com.hexagontk.http.model.OK_200
@@ -28,7 +28,7 @@ internal class ApplicationTest {
 
     private val baseUrl: URI by lazy { URI("http://localhost:${restApi.server.runtimePort}") }
     private val settings: HttpClientSettings by lazy { HttpClientSettings(baseUrl) }
-    private val client: HttpClient by lazy { HttpClient(JettyHttpClient(), settings) }
+    private val client: HttpClient by lazy { HttpClient(JdkHttpClient(), settings) }
 
     @BeforeAll fun beforeAll() {
         main()

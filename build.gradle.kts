@@ -4,11 +4,11 @@ import java.lang.System.getProperty
 
 plugins {
     kotlin("jvm") version("2.1.10")
-    id("org.graalvm.buildtools.native") version("0.10.4")
+    id("org.graalvm.buildtools.native") version("0.10.5")
 }
 
-val hexagonVersion = "4.0.0-B2"
-val flywayVersion = "11.3.0"
+val hexagonVersion = "4.0.0-B3"
+val flywayVersion = "11.3.1"
 val postgresqlVersion = "42.7.5"
 val kafkaVersion = "3.9.0"
 val gradleScripts = "https://raw.githubusercontent.com/hexagontk/hexagon/$hexagonVersion/gradle"
@@ -28,13 +28,13 @@ group="org.example"
 description="Service's description"
 
 dependencies {
-    "implementation"("com.hexagontk.http:http_server_helidon:$hexagonVersion")
+    "implementation"("com.hexagontk.http:http_server_jdk:$hexagonVersion")
     "implementation"("com.hexagontk.serialization:serialization_jackson_json:$hexagonVersion")
     "implementation"("org.flywaydb:flyway-core:$flywayVersion")
     "implementation"("org.postgresql:postgresql:$postgresqlVersion")
     "implementation"("org.apache.kafka:kafka-clients:$kafkaVersion")
 
-    "testImplementation"("com.hexagontk.http:http_client_jetty:$hexagonVersion")
+    "testImplementation"("com.hexagontk.http:http_client_jdk:$hexagonVersion")
 }
 
 extensions.configure<GraalVMExtension> {

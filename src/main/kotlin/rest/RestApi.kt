@@ -8,7 +8,7 @@ import com.hexagontk.http.server.HttpServer
 import com.hexagontk.http.server.HttpServerSettings
 import com.hexagontk.http.handlers.HttpHandler
 import com.hexagontk.http.handlers.path
-import com.hexagontk.http.server.helidon.HelidonHttpServer
+import com.hexagontk.http.server.jdk.JdkHttpServer
 import com.hexagontk.serialization.jackson.json.Json
 import com.hexagontk.serialization.serialize
 import org.example.domain.AppointmentsService
@@ -60,6 +60,6 @@ class RestApi(
     }
 
     private val settings = HttpServerSettings(ALL_INTERFACES, bindPort)
-    private val serverAdapter = HelidonHttpServer()
+    private val serverAdapter = JdkHttpServer()
     val server: HttpServer = HttpServer(serverAdapter, applicationHandler, settings)
 }
