@@ -1,16 +1,16 @@
 package org.example.rest
 
-import com.hexagontk.core.ALL_INTERFACES
-import com.hexagontk.core.media.APPLICATION_JSON
-import com.hexagontk.core.require
-import com.hexagontk.http.model.ContentType
-import com.hexagontk.http.server.HttpServer
-import com.hexagontk.http.server.HttpServerSettings
-import com.hexagontk.http.handlers.HttpHandler
-import com.hexagontk.http.handlers.path
-import com.hexagontk.http.server.jdk.JdkHttpServer
-import com.hexagontk.serialization.jackson.json.Json
-import com.hexagontk.serialization.serialize
+import com.hexagonkt.core.ALL_INTERFACES
+import com.hexagonkt.core.media.APPLICATION_JSON
+import com.hexagonkt.core.require
+import com.hexagonkt.http.model.ContentType
+import com.hexagonkt.http.server.HttpServer
+import com.hexagonkt.http.server.HttpServerSettings
+import com.hexagonkt.http.handlers.HttpHandler
+import com.hexagonkt.http.handlers.path
+import com.hexagonkt.http.server.jetty.JettyServletAdapter
+import com.hexagonkt.serialization.jackson.json.Json
+import com.hexagonkt.serialization.serialize
 import org.example.domain.AppointmentsService
 
 class RestApi(
@@ -60,6 +60,6 @@ class RestApi(
     }
 
     private val settings = HttpServerSettings(ALL_INTERFACES, bindPort)
-    private val serverAdapter = JdkHttpServer()
+    private val serverAdapter = JettyServletAdapter()
     val server: HttpServer = HttpServer(serverAdapter, applicationHandler, settings)
 }

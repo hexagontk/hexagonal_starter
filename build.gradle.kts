@@ -7,7 +7,7 @@ plugins {
     id("org.graalvm.buildtools.native") version("0.10.5")
 }
 
-val hexagonVersion = "4.0.1"
+val hexagonVersion = "3.7.4"
 val flywayVersion = "11.3.3"
 val postgresqlVersion = "42.7.5"
 val kafkaVersion = "3.9.0"
@@ -28,13 +28,13 @@ group="org.example"
 description="Service's description"
 
 dependencies {
-    "implementation"("com.hexagontk.http:http_server_jdk:$hexagonVersion")
-    "implementation"("com.hexagontk.serialization:serialization_jackson_json:$hexagonVersion")
+    "implementation"("com.hexagonkt:http_server_jetty:$hexagonVersion")
+    "implementation"("com.hexagonkt:serialization_jackson_json:$hexagonVersion")
     "implementation"("org.flywaydb:flyway-core:$flywayVersion")
     "implementation"("org.postgresql:postgresql:$postgresqlVersion")
     "implementation"("org.apache.kafka:kafka-clients:$kafkaVersion")
 
-    "testImplementation"("com.hexagontk.http:http_client_jdk:$hexagonVersion")
+    "testImplementation"("com.hexagonkt:http_client_jetty:$hexagonVersion")
 }
 
 extensions.configure<GraalVMExtension> {

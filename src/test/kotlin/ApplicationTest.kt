@@ -1,17 +1,18 @@
 package org.example
 
-import com.hexagontk.core.info
-import com.hexagontk.core.media.APPLICATION_JSON
-import com.hexagontk.http.client.HttpClient
-import com.hexagontk.http.client.HttpClientSettings
-import com.hexagontk.http.client.jdk.JdkHttpClient
-import com.hexagontk.http.model.HttpMethod.POST
-import com.hexagontk.http.model.NOT_FOUND_404
-import com.hexagontk.http.model.OK_200
-import com.hexagontk.http.model.HttpRequest
-import com.hexagontk.serialization.jackson.json.Json
-import com.hexagontk.serialization.parseMap
-import com.hexagontk.serialization.serialize
+import com.hexagonkt.core.logging.info
+import com.hexagonkt.core.media.APPLICATION_JSON
+import com.hexagonkt.core.urlOf
+import com.hexagonkt.http.client.HttpClient
+import com.hexagonkt.http.client.HttpClientSettings
+import com.hexagonkt.http.client.jetty.JettyClientAdapter
+import com.hexagonkt.http.model.HttpMethod.POST
+import com.hexagonkt.http.model.NOT_FOUND_404
+import com.hexagonkt.http.model.OK_200
+import com.hexagonkt.http.model.HttpRequest
+import com.hexagonkt.serialization.jackson.json.Json
+import com.hexagonkt.serialization.parseMap
+import com.hexagonkt.serialization.serialize
 import org.example.domain.model.Appointment
 import org.example.rest.AppointmentMessage
 import org.junit.jupiter.api.AfterAll
@@ -19,16 +20,16 @@ import org.junit.jupiter.api.BeforeAll
 import org.junit.jupiter.api.Test
 import org.junit.jupiter.api.TestInstance
 import org.junit.jupiter.api.TestInstance.Lifecycle.PER_CLASS
-import java.net.URI
+import java.net.URL
 import java.time.LocalDateTime
 import kotlin.test.assertEquals
 
 @TestInstance(PER_CLASS)
 internal class ApplicationTest {
 
-    private val baseUrl: URI by lazy { URI("http://localhost:${restApi.server.runtimePort}") }
+    private val baseUrl: URL by lazy { urlOf("http://localhost:${restApi.server.runtimePort}") }
     private val settings: HttpClientSettings by lazy { HttpClientSettings(baseUrl) }
-    private val client: HttpClient by lazy { HttpClient(JdkHttpClient(), settings) }
+    private val client: HttpClient by lazy { HttpClient(JettyClientAdapter(), settings) }
 
     @BeforeAll fun beforeAll() {
         main()
