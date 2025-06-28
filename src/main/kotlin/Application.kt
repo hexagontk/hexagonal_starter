@@ -1,5 +1,6 @@
 package org.example
 
+import com.hexagontk.core.Process
 import com.hexagontk.core.Platform
 import com.hexagontk.core.info
 import org.example.adapters.LoggingAppointmentsNotifier
@@ -21,5 +22,5 @@ fun main() {
     )
 
     restApi.server.start()
-    restApi.server.createBanner(Platform.uptime()).info()
+    restApi.server.createBanner(Process.uptime()).info()
 }
